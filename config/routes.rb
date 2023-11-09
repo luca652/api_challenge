@@ -5,8 +5,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root to: "museums#index"
+  # root to: "museums#index"
   resources :museums, only: [:index, :create, :destroy]
   resources :requests, only: [:new, :create, :destroy]
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :museums, only: [ :index ]
+    end
+  end
 
 end
