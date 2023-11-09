@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_09_103402) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_09_122106) do
   create_table "museums", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
   end
 
 end
