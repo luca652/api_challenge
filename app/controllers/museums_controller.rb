@@ -1,6 +1,7 @@
 class MuseumsController < ApplicationController
   def index
     @museums = Museum.all
+    @request = Request.new
   end
 
   def create
